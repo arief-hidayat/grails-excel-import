@@ -609,7 +609,8 @@ public class ExcelImportService {
 
 	Cell getCell(Sheet currentSheet, String ref) {
 		CellReference cellReference = new CellReference(ref);
-		Row row = currentSheet.getRow(cellReference.getRow());
+		Row row = currentSheet.getRow(cellReference.getRow())
+		if(!row) return null
 		Cell cell = row.getCell(cellReference.getCol())
 		//println "returning cell $cell"
 		cell
